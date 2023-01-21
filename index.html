@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coin Flip Betting Game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Coin Flip Betting Game</h1>
+  <form id="bet-form">
+    <label for="bet-amount">Bet Amount (in Ether):</label>
+    <input type="number" id="bet-amount" min="0.1" step="0.1" required>
+    <button type="submit">Flip Coin</button>
+  </form>
+  <div id="result"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#bet-form {
+  margin: 0 auto;
+  width: 300px;
+}
+
+#bet-amount {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: red;
+}
+const betForm = document.getElementById("bet-form");
+const betAmount = document.getElementById("bet-amount");
+const result = document.getElementById("result");
+
+betForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const amount = betAmount.value;
+
+  // Use web3.js to interact with the smart contract and make the bet
+  //...
+
+  // Display the result of the coin flip
+  const randomNumber = Math.random();
+  if (randomNumber < 0.5) {
+    result.innerHTML = "You won " + amount + " Ether!";
+    result.classList.add("win");
+  } else {
+    result.innerHTML = "You lost " + amount + " Ether.";
+    result.classList.add("lose");
+  }
+});
