@@ -48,3 +48,18 @@ app.post("/bet", (req, res) => {
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
+import { Connection } from '@solana/phantom'
+const connection = new Connection('https://testnet.solana.com')
+connection.connect({ appName: 'Coin Flip Game', appLogoUrl: 'https://example.com/logo.png' })
+connection.sendAndConfirmTransaction(contract.methods.flip().encodeABI(), amount, {
+  // The number of confirmations to wait for before resolving the Promise
+  confirmations: 2,
+  // The amount of time to wait before resolving the Promise with an error
+  timeout: 30000,
+})
+  .then(receipt => {
+    console.log("Transaction receipt: ", receipt)
+  })
+  .catch(error => {
+    console.error("Transaction error: ", error)
+  })
