@@ -1,0 +1,59 @@
+/* Add some basic styling to the webpage */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Center the form on the page */
+#bet-form {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #ccc;
+}
+
+/* Style the form inputs */
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Change the background color of the submit button on hover */
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the result display */
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+/* Style the result text for a win */
+.win {
+  color: green;
+}
+
+/* Style the result text for a loss */
+.lose {
+  color: red;
+}
